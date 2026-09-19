@@ -1,0 +1,126 @@
+:root{--purple:#5138ee;--purple-dark:#35209d;--pink:#f04491;--yellow:#ffc94a;--ink:#22213a;--muted:#6e6b86;--line:#e7e5f2;--bg:#f5f3ff;--white:#fff;--green:#16a36a;box-sizing:border-box}
+*{box-sizing:inherit}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:"Nunito",sans-serif;background:radial-gradient(circle at top left,#efe7ff 0,transparent 34%),radial-gradient(circle at top right,#ffe9f5 0,transparent 32%),var(--bg)}
+.page-shell{width:min(920px,calc(100% - 28px));margin:0 auto;padding:38px 0 24px}
+.hero{text-align:center;padding:20px 12px 30px}
+.school-logo{display:block;width:112px;height:112px;margin:0 auto 14px;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 10px 30px rgba(24,61,105,.18)}
+.school-badge{display:inline-block;padding:7px 14px;border-radius:999px;background:var(--yellow);font-size:.78rem;font-weight:900;letter-spacing:.12em}
+.eyebrow{margin:16px 0 4px;color:var(--pink);font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}
+.hero h1{max-width:690px;margin:0 auto;font-size:clamp(2.15rem,7vw,4.15rem);line-height:1.02;font-weight:900}
+.hero h1 span{color:var(--purple)}
+.hero-copy{max-width:600px;margin:16px auto 0;color:var(--muted);font-size:1.08rem}
+.countdown-panel{max-width:620px;margin:22px auto 0;padding:15px 18px;border:1px solid #ded9ff;border-radius:18px;background:rgba(255,255,255,.82);box-shadow:0 10px 30px rgba(81,56,238,.08)}
+.countdown-panel>p{margin:0 0 11px;color:var(--purple-dark);font-size:.92rem;font-weight:900}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.countdown span{display:flex;flex-direction:column;padding:8px;border-radius:12px;background:#f0edff}
+.countdown strong{color:var(--purple);font-size:1.45rem;line-height:1}
+.countdown small{margin-top:4px;color:var(--muted);font-size:.68rem;font-weight:800;text-transform:uppercase}
+.countdown-panel.closed{border-color:#ffd0dc;background:#fff4f7}
+.countdown-panel.closed>p{margin:0;color:#b5224a;font-size:1.05rem}
+.mode-badge{display:inline-flex;margin-top:16px;padding:7px 12px;border:1px solid #d5a727;border-radius:8px;background:#fff6cc;color:#745a08;font-size:.84rem;font-weight:800}
+.card{background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.9);border-radius:25px;box-shadow:0 20px 70px rgba(62,40,145,.12);padding:clamp(22px,5vw,46px);backdrop-filter:blur(12px)}
+.step-heading{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.step-number{display:grid;place-items:center;flex:0 0 42px;height:42px;border-radius:13px;background:var(--purple);color:#fff;font-weight:900;font-size:1.1rem}
+.step-heading p{margin:0;color:var(--pink);font-weight:900;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em}
+.step-heading h2{margin:1px 0 0;font-size:1.35rem}
+label{display:block;font-weight:800;margin:0 0 8px}
+input[type=text],input[type=email],input[type=password]{width:100%;border:2px solid var(--line);border-radius:13px;padding:15px 16px;font:inherit;color:var(--ink);outline:none;transition:.2s}
+input[type=text]:focus,input[type=email]:focus,input[type=password]:focus{border-color:var(--purple);box-shadow:0 0 0 4px rgba(81,56,238,.1)}
+.help-text{margin:8px 0 0;color:var(--muted);font-size:.88rem}
+.divider{height:1px;background:var(--line);margin:34px 0}
+.category{border:0;padding:0;margin:0 0 32px}
+.category legend{display:flex;align-items:center;gap:13px;width:100%;margin-bottom:14px}
+.category-icon{display:grid;place-items:center;flex:0 0 48px;height:48px;border-radius:14px;background:#f1efff;font-size:1.5rem}
+.category strong,.category small{display:block}
+.category strong{font-size:1.08rem}
+.category small{margin-top:3px;color:var(--muted);font-size:.85rem;font-weight:600}
+.course-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.course-option{position:relative;margin:0}
+.course-option input{position:absolute;opacity:0;pointer-events:none}
+.course-option span{display:grid;place-items:center;min-height:54px;border:2px solid var(--line);border-radius:13px;background:#fff;cursor:pointer;font-weight:900;transition:.18s}
+.course-option span:hover{border-color:#b9b0f8;transform:translateY(-1px)}
+.course-option input:checked+span{border-color:var(--purple);background:var(--purple);color:#fff;box-shadow:0 7px 20px rgba(81,56,238,.22)}
+.confirmation{display:flex;gap:11px;align-items:flex-start;margin:10px 0 22px;padding:14px;border-radius:12px;background:#f7f6fc;color:#514e68;font-size:.9rem;font-weight:700}
+.confirmation input{margin-top:3px;accent-color:var(--purple);transform:scale(1.15)}
+button{font:inherit}
+.primary-button,.secondary-button{width:100%;border:0;border-radius:14px;padding:16px 20px;cursor:pointer;font-weight:900}
+.primary-button{background:linear-gradient(135deg,var(--purple),#7654f8);color:#fff;box-shadow:0 12px 25px rgba(81,56,238,.25)}
+.primary-button:hover{filter:brightness(1.05)}
+.primary-button:disabled{opacity:.65;cursor:wait}
+.secondary-button{margin-top:10px;background:#eeecfa;color:var(--purple-dark)}
+.message{min-height:22px;margin:12px 0 0;text-align:center;color:#be274f;font-weight:800}
+.hidden{display:none!important}
+.success-card{text-align:center}
+.auth-card{max-width:600px;margin:0 auto;text-align:center}
+.auth-logo{display:block;width:82px;height:82px;margin:0 auto 10px;border-radius:50%;object-fit:cover;box-shadow:0 8px 24px rgba(24,61,105,.14)}
+.auth-icon{display:grid;place-items:center;width:68px;height:68px;margin:0 auto 8px;border-radius:50%;background:#eeeaff;font-size:1.8rem}
+.auth-card .eyebrow{margin-top:10px}
+.auth-card h2{margin:3px 0 8px;font-size:2rem}
+.auth-copy{max-width:470px;margin:0 auto 25px;color:var(--muted)}
+.auth-form{text-align:left}
+.auth-form label{margin-top:15px}
+.auth-form .primary-button{margin-top:22px}
+.success-icon{display:grid;place-items:center;width:68px;height:68px;margin:0 auto 16px;border-radius:50%;background:#daf7e9;color:var(--green);font-size:2rem;font-weight:900}
+.success-card h2{margin:0;font-size:2rem}
+.success-card>p{color:var(--muted)}
+.vote-summary{margin:22px 0;text-align:left;border:1px solid var(--line);border-radius:15px;overflow:hidden}
+.summary-row{display:flex;justify-content:space-between;gap:15px;padding:13px 15px;border-bottom:1px solid var(--line)}
+.summary-row:last-child{border-bottom:0}
+.summary-row span{color:var(--muted)}
+.results-header{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:25px}
+.results-header .eyebrow{margin:0}
+.results-header h2{margin:3px 0 0;font-size:1.8rem}
+.total-votes{padding:9px 13px;border-radius:999px;background:#f0edff;color:var(--purple);font-weight:900;white-space:nowrap}
+.final-winners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 30px}
+.final-winner{padding:17px;border:1px solid #eadca1;border-radius:16px;background:linear-gradient(145deg,#fffaf0,#fff1bd);text-align:center}
+.final-winner .trophy{font-size:1.7rem}
+.final-winner small,.final-winner strong,.final-winner span{display:block}
+.final-winner small{margin:5px 0;color:#796222;font-size:.72rem;font-weight:900;text-transform:uppercase}
+.final-winner strong{color:#44320a;font-size:1.08rem}
+.final-winner span{margin-top:4px;color:#806918;font-size:.82rem;font-weight:800}
+.winners-pending{grid-column:1/-1;margin:0;padding:14px;border-radius:14px;background:#f7f6fc;color:var(--muted);text-align:center;font-weight:800}
+.result-category{margin-bottom:30px}
+.result-category h3{margin:0 0 13px}
+.winner{display:inline-block;margin-left:7px;padding:3px 8px;border-radius:999px;background:#fff0b9;color:#755700;font-size:.68rem;vertical-align:2px}
+.result-row{display:grid;grid-template-columns:62px 1fr 34px;align-items:center;gap:10px;margin:9px 0;font-size:.91rem;font-weight:800}
+.bar-track{height:12px;border-radius:999px;background:#eeecf6;overflow:hidden}
+.bar{height:100%;min-width:0;border-radius:999px;background:linear-gradient(90deg,var(--purple),var(--pink));transition:width .6s ease}
+footer{text-align:center;padding:8px 16px 35px;color:var(--muted);font-size:.85rem}
+.confetti{position:fixed;z-index:-1;width:15px;height:15px;border-radius:4px;transform:rotate(18deg)}
+.confetti-one{top:9%;left:8%;background:var(--pink);box-shadow:35px 62px 0 var(--yellow),80vw 20px 0 var(--purple),72vw 150px 0 #43c9a4}
+.confetti-two{top:52%;right:5%;background:var(--yellow);box-shadow:-88vw 90px 0 #43c9a4,-15px 170px 0 var(--pink)}
+@media(max-width:650px){.page-shell{width:min(100% - 18px,920px);padding-top:15px}
+.hero{padding-bottom:22px}
+.course-grid{grid-template-columns:repeat(2,1fr)}
+.card{border-radius:19px}
+.results-header{align-items:flex-start;flex-direction:column}
+.result-row{grid-template-columns:56px 1fr 27px}
+.summary-row{flex-direction:column;gap:2px}
+.summary-row strong{color:var(--purple)}
+.school-logo{width:92px;height:92px}
+.countdown strong{font-size:1.15rem}
+.countdown small{font-size:.58rem}
+.final-winners{grid-template-columns:1fr}
+}
+
+.participants-section{margin:35px 0 20px;padding-top:28px;border-top:1px solid var(--line)}
+.participants-header{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:16px}
+.participants-header .eyebrow{margin:0}
+.participants-header h3{margin:3px 0 0;font-size:1.35rem}
+.participants-count{padding:8px 12px;border-radius:999px;background:#e5f8ef;color:#11764f;font-weight:900;white-space:nowrap}
+.participants-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.participant{display:flex;align-items:center;gap:10px;min-width:0;padding:11px 13px;border:1px solid var(--line);border-radius:12px;background:#faf9ff}
+.participant span{display:grid;place-items:center;flex:0 0 28px;height:28px;border-radius:9px;background:#eeeaff;color:var(--purple);font-size:.8rem;font-weight:900}
+.participant-info{display:flex;min-width:0;flex-direction:column;gap:2px}
+.participant strong{overflow-wrap:anywhere}
+.participant small{color:var(--muted);font-size:.86rem;font-weight:700}
+.no-participants{grid-column:1/-1;margin:0;color:var(--muted)}
+.authority-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+.authority-actions.authority-mode{grid-template-columns:repeat(3,1fr)}
+.authority-actions .secondary-button{margin-top:0}
+.danger-button{background:#fff0f4;color:#b5224a}
+
+@media(max-width:650px){.participants-header{align-items:flex-start;flex-direction:column}
+.participants-list{grid-template-columns:1fr}
+.authority-actions{grid-template-columns:1fr}
+}

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5138ee">
+  <title>Votación Día del Estudiante 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="confetti confetti-one"></div>
+  <div class="confetti confetti-two"></div>
+  <main class="page-shell">
+    <header class="hero">
+      <img class="school-logo" src="assets/logo-proa.jpg" alt="Logo Escuela PROA Sede La Para">
+      <div class="school-badge">PROA LA PARA</div>
+      <p class="eyebrow">Celebramos juntos</p>
+      <h1>Votación Día del Estudiante <span>2026</span></h1>
+      <p class="hero-copy">Elegí al curso destacado en cada categoría. Tu participación es muy importante.</p>
+      <section id="countdownPanel" class="countdown-panel" aria-live="polite">
+        <p id="countdownLabel">La votación cierra el lunes 21/09/2026 a las 15:00 hs.</p>
+        <div id="countdown" class="countdown">
+          <span><strong id="countdownDays">00</strong><small>Días</small></span>
+          <span><strong id="countdownHours">00</strong><small>Horas</small></span>
+          <span><strong id="countdownMinutes">00</strong><small>Minutos</small></span>
+          <span><strong id="countdownSeconds">00</strong><small>Segundos</small></span>
+        </div>
+      </section>
+      <div id="modeBadge" class="mode-badge hidden">Modo demostración</div>
+    </header>
+
+    <section id="votingPanel" class="card voting-card">
+      <div class="step-heading">
+        <span class="step-number">1</span>
+        <div><p>Paso 1</p><h2>Identificación del docente</h2></div>
+      </div>
+      <label for="teacherName">Nombre y apellido</label>
+      <input id="teacherName" type="text" maxlength="70" autocomplete="name" placeholder="Ejemplo: Débora Cavallo">
+      <p class="help-text">El nombre se utiliza únicamente para evitar votos repetidos.</p>
+
+      <div class="divider"></div>
+      <div class="step-heading">
+        <span class="step-number">2</span>
+        <div><p>Paso 2</p><h2>Elegí un curso en cada categoría</h2></div>
+      </div>
+
+      <form id="voteForm">
+        <fieldset class="category" data-category="coreografia">
+          <legend><span class="category-icon">🎭</span><span><strong>Mejor coreografía o producción artística</strong><small>Creatividad, coordinación y puesta en escena</small></span></legend>
+          <div class="course-grid"></div>
+        </fieldset>
+
+        <fieldset class="category" data-category="decoracion">
+          <legend><span class="category-icon">🎨</span><span><strong>Mejor decoración del aula</strong><small>Originalidad, dedicación y trabajo en equipo</small></span></legend>
+          <div class="course-grid"></div>
+        </fieldset>
+
+        <fieldset class="category" data-category="accesorio">
+          <legend><span class="category-icon">🕶️</span><span><strong>Mejor accesorio o vestimenta</strong><small>Gorras, lentes, prendas y elementos identificatorios</small></span></legend>
+          <div class="course-grid"></div>
+        </fieldset>
+
+        <label class="confirmation"><input id="confirmation" type="checkbox"><span>Confirmo que revisé mis elecciones. Una vez enviado, el voto no podrá modificarse.</span></label>
+        <button id="submitButton" class="primary-button" type="submit">Enviar mi votación <span>→</span></button>
+        <p id="formMessage" class="message" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="successPanel" class="card success-card hidden">
+      <div class="success-icon">✓</div>
+      <h2>¡Voto registrado!</h2>
+      <p>Gracias por participar en la elección del Día del Estudiante.</p>
+      <div id="voteSummary" class="vote-summary"></div>
+      <button id="finishButton" class="primary-button" type="button">Ver resultados</button>
+    </section>
+
+    <section id="authPanel" class="card auth-card hidden">
+      <img class="auth-logo" src="assets/logo-proa.jpg" alt="Logo Escuela PROA Sede La Para">
+      <div class="auth-icon">🔐</div>
+      <p id="authEyebrow" class="eyebrow">Acceso docente</p>
+      <h2 id="authTitle">Ingresá para votar</h2>
+      <p id="authCopy" class="auth-copy">Creá una cuenta con tu correo y una contraseña. Si ya estás registrado, iniciá sesión.</p>
+      <form id="authForm" class="auth-form">
+        <label for="authorityEmail">Correo electrónico</label>
+        <input id="authorityEmail" type="email" autocomplete="username" required placeholder="docente@correo.com">
+        <label for="authorityPassword">Contraseña</label>
+        <input id="authorityPassword" type="password" autocomplete="current-password" required minlength="6" inputmode="numeric" placeholder="Ingresá tu contraseña">
+        <p class="help-text password-help">Para crear la cuenta, usá una contraseña de exactamente 6 números.</p>
+        <button id="loginButton" class="primary-button" type="submit">Iniciar sesión</button>
+        <button id="registerButton" class="secondary-button" type="button">Crear cuenta docente</button>
+        <p id="authMessage" class="message" role="alert"></p>
+      </form>
+      <button id="cancelLoginButton" class="secondary-button hidden" type="button">Volver a la votación</button>
+    </section>
+
+    <section id="resultsPanel" class="card results-card hidden">
+      <div class="results-header"><div><p id="resultsEyebrow" class="eyebrow">Resultados en vivo</p><h2>Resultados de la votación</h2></div><span id="totalVotes" class="total-votes">0 votos</span></div>
+      <section id="finalWinners" class="final-winners"></section>
+      <div id="resultsContainer"></div>
+      <section id="participantsSection" class="participants-section">
+        <div class="participants-header">
+          <div><p class="eyebrow">Participantes</p><h3>Docentes que votaron</h3></div>
+          <span id="participantsCount" class="participants-count">0 docentes</span>
+        </div>
+        <div id="participantsList" class="participants-list"></div>
+      </section>
+      <div class="authority-actions">
+        <button id="refreshResultsButton" class="secondary-button" type="button">Actualizar resultados</button>
+        <button id="downloadPdfButton" class="secondary-button hidden" type="button">Descargar informe PDF</button>
+        <button id="logoutButton" class="secondary-button danger-button" type="button">Cerrar sesión</button>
+      </div>
+    </section>
+  </main>
+  <footer>Escuela PROA La Para · Día del Estudiante 2026</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
